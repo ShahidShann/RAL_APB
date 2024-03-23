@@ -70,7 +70,7 @@ always@(posedge clk) begin
    out_pkt<=0;
 	end
 	else if(pkt_rec) begin
-    //out_pkt<=in_pkt; //Bug source and dest addr are not interchanging
+    //out_pkt<=in_pkt; //Bug, source and dest addr are not interchanging
 		out_pkt<={in_pkt[47:32],in_pkt[63:48],in_pkt[31:0]};
     pkt_rec<=0; // Bug fix, initially this line was not present
 	end
